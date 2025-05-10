@@ -9,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,14 +25,14 @@ public class UserController {
 
     // 회원가입
     @PostMapping("/signup")
-    public ResponseEntity<String> signUp(SignupRequest signupRequest) {
+    public ResponseEntity<String> signUp(@RequestBody @Validated SignupRequest signupRequest) {
         userService.signUp(signupRequest);
         return new ResponseEntity<>("회원가입 완료", HttpStatus.OK);
     }
 
     // 로그인
     @PostMapping("/login")
-    public ResponseEntity<String> login(LoginRequest loginRequest) {
+    public ResponseEntity<String> login(@RequestBody @Validated LoginRequest loginRequest) {
         UserResponse token = userService.login(loginRequest);
         return new ResponseEntity<>(token.getToken(), HttpStatus.OK);
     }
