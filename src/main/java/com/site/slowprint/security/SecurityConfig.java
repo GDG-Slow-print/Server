@@ -33,7 +33,7 @@ public class SecurityConfig {
                 // URL별 권한 설정
                 .authorizeHttpRequests(auth -> auth
                         // 회원가입·로그인 API는 모두 허용
-                        .requestMatchers("/", "/api/user/login", "/api/user/signup", "/api/user/logout","/h2-console/**", "/error").permitAll()
+                        .requestMatchers("/", "/user/login", "/user/signup", "/user/logout","/h2-console/**", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
