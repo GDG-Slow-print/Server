@@ -61,8 +61,11 @@ public class UserService {
         User user = userRepository.findByEmail(loginRequest.getEmail())
                 .orElseThrow(UserNotFoundException::new);
 
-        // 비밀번호 비교
-        if(!Objects.equals(loginRequest.getPassword(), user.getPassword())){
+
+        // 비밀번호 일치 체크
+        String encryptedPassword = encodePassword(loginRequest.getEmail(), loginRequest.getPassword());
+
+        if (!Objects.equals(user.getPassword(), encryptedPassword)) {
             throw new PasswordNotMatchException();
         }
 
