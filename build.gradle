@@ -28,7 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'me.paulschwarz:spring-dotenv:2.5.4' // .env 파일 사용을 위한 의존성
+    implementation 'me.paulschwarz:spring-dotenv:3.0.0' // .env 파일 사용을 위한 의존성
     implementation 'com.google.cloud:google-cloud-vertexai:1.20.1' // Java용 Gemini 라이브러리
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2' // Swagger 라이브러리
     // JWT 생성 및 검증을 위한 라이브러리
