@@ -46,4 +46,8 @@ public class User {
     @UpdateTimestamp
     @Column(name = "user_updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    public void updateTotalMileage(double earnedMileage) {
+        this.totalMileage += earnedMileage;
+    }
 }
