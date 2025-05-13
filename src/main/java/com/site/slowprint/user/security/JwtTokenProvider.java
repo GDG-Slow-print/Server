@@ -19,7 +19,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.security.Key;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.Date;
@@ -47,11 +49,13 @@ public class JwtTokenProvider {
         LOGGER.info("[createToken] Generating token for email: " + email);
         Date now = new Date();
 
+        Key hmacKey = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), SignatureAlgorithm.HS256.getJcaName());
+
         String token = Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + validityInMilliseconds))
-                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .signWith(hmacKey, SignatureAlgorithm.HS256)
                 .compact();
 
         LOGGER.info("[createToken] Token generated: " + token);

@@ -34,7 +34,9 @@ public class User {
     private String authToken;
 
 
+
     @Column(name = "total_mileage", nullable = false)
+    @Builder.Default
     private int totalMileage = 0;
 
 

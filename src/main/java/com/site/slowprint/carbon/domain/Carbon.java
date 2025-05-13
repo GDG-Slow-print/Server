@@ -4,7 +4,7 @@ import com.site.slowprint.user.domain.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.Id;
+
 
 import java.time.LocalDateTime;
 
