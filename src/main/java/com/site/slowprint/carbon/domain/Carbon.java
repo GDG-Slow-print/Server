@@ -24,18 +24,19 @@ public class Carbon {
     @JoinColumn(name = "user_email", nullable = false)
     private User user;
 
-    @Column(nullable = false)
+    @Column(name = "transportation_mode",nullable = false)
     private String transportation;
 
-    @Column(nullable = false)
+    @Column(name = "distance_km",nullable = false)
     private double distance;
 
-    @Column(nullable = false)
+    @Column(name="saved_Carbon",nullable = false)
     private double savedCarbon;
 
-    @Column(nullable = false)
+    @Column(name="earned_Mileage",nullable = false)
     private double earnedMileage;
 
     @CreationTimestamp
+    @Column(name = "carbon_created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 }
