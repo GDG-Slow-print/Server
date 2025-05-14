@@ -89,7 +89,7 @@ public class CarbonService {
         for (User user : users) {
             result.add(CarbonRankResponse.builder()
                     .rank(rank++)
-                    .email(user.getEmail())
+                    .username(user.getEmail().split("@")[0])
                     .totalMileage(user.getTotalMileage())
                     .build());
         }
