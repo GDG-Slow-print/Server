@@ -31,7 +31,7 @@ public class MatchingController {
     }
 
     @GetMapping("/{matchingId}")
-    public ResponseEntity<?> matchDetail(@PathVariable("matchingId") Long matchingId) {
+    public ResponseEntity<?> matchDetail(@PathVariable Long matchingId) {
         MatchingDetailResponseDTO matchingDetailResponseDTO;
         try {
             matchingDetailResponseDTO = matchingService.matchDetail(matchingId);
