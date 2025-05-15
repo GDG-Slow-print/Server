@@ -8,5 +8,5 @@ import lombok.Data;
 public class PhotoDTO {
     private String url;
     private boolean isMain;
-    private int order;
+    private int odr;
 }

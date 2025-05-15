@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class MatchRequestDTO {
+public class MatchingRequestDTO {
 
     private String title;
 

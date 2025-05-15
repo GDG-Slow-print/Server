@@ -3,7 +3,7 @@ package com.site.slowprint.board.dto;
 import lombok.Builder;
 
 @Builder
-public class MatchResponseDTO {
-    private Long matchId;
+public class MatchingResponseDTO {
+    private Long matchingId;
     private String message;
 }

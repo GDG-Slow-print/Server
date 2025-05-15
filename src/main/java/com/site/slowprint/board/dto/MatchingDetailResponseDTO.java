@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class MatchDetailResponseDTO {
+public class MatchingDetailResponseDTO {
     private String userEmail;
     private String title;
     private String contents;

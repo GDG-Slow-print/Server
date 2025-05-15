@@ -4,7 +4,7 @@ import lombok.Getter;
 
 
 @Getter
-public enum MatchStatus {
+public enum MatchingStatus {
     OPEN,
     CLOSED;
 }
