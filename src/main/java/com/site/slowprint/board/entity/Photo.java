@@ -20,10 +20,10 @@ public class Photo {
     private String url;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MATCH_ID")
-    private Match match;
+    @JoinColumn(name = "MATCHING_ID")
+    private Matching matching;
 
     private boolean isMain;
 
-    private int order;
+    private int odr;
 }

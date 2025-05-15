@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class MatchListResponseDTO {
-    private Long matchId;
+public class MatchingListResponseDTO {
+    private Long matchingId;
     private String userEmail;
     private String title;
     private String contents;
