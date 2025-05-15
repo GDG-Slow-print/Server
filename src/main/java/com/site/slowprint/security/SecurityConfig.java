@@ -61,7 +61,7 @@ public class SecurityConfig {
                 // URL별 권한 설정
                 .authorizeHttpRequests(auth -> auth
                         // 회원가입·로그인 API는 모두 허용
-                        .requestMatchers("/", "/user/login", "/user/signup", "/user/logout","/h2-console/**", "/error","/carbon/footprint", "/carbon/rank").permitAll()
+                        .requestMatchers("/", "/user/login", "/user/signup", "/user/logout","/h2-console/**", "/error", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/carbon/footprint", "/carbon/rank").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
