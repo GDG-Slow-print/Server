@@ -35,6 +35,7 @@ public class User {
 
 
     @Column(name = "total_mileage", nullable = false)
+    @Builder.Default
     private int totalMileage = 0;
 
 
@@ -46,4 +47,8 @@ public class User {
     @UpdateTimestamp
     @Column(name = "user_updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    public void updateTotalMileage(double earnedMileage) {
+        this.totalMileage += earnedMileage;
+    }
 }

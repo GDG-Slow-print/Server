@@ -63,7 +63,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // 회원가입·로그인 API는 모두 허용
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers("/", "/user/login", "/user/signup", "/user/logout","/h2-console/**", "/error", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/api-docs/**" ).permitAll()
+                        .requestMatchers("/", "/user/login", "/user/signup", "/user/logout","/h2-console/**", "/error", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/carbon/footprint", "/carbon/rank").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
