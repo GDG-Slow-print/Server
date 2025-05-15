@@ -23,6 +23,10 @@ public class Photo {
     @JoinColumn(name = "MATCHING_ID")
     private Matching matching;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MATCHING_ID")
+    private Recruitment recruitment;
+
     private boolean isMain;
 
     private int odr;
