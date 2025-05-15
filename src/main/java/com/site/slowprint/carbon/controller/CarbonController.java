@@ -22,7 +22,7 @@ public class CarbonController {
 
     // 탄소 절감량 계산 API
     @PostMapping("/footprint")
-    public ResponseEntity<CarbonResponse> saveCarbon(@RequestHeader("X-USER-EMAIL") String email,
+    public ResponseEntity<CarbonResponse> saveCarbon(@RequestHeader("Email") String email,
                                                      @RequestBody CarbonRequest request) {
         CarbonResponse carbonResponse = carbonService.saveCarbon(email, request);
         return new ResponseEntity<>(carbonResponse, HttpStatus.OK);

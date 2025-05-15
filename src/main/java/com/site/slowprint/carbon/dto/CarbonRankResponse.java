@@ -7,9 +7,10 @@ import lombok.Getter;
 @Builder
 public class CarbonRankResponse {
 
+    private int rank;
+
     private String username;
 
     private long totalMileage;
 
-    private int rank;
 }

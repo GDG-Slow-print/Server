@@ -30,7 +30,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             System.out.println("✔ Authenticated user: " + auth.getName());
         }
 
-
         filterChain.doFilter(request, response);
     }
 }
