@@ -38,4 +38,10 @@ public class RecruitmentController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(recruitmentDetailResponseDTO);
     }
+
+    @DeleteMapping("/{recruitmentId}")
+    public ResponseEntity<?> deleteMatch(@PathVariable Long recruitmentId) {
+        recruitmentService.deleteRecruitment(recruitmentId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

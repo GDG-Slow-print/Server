@@ -116,4 +116,8 @@ public class MatchingService {
         }
         return matchingDetailResponseDTO;
     }
+
+    public void deleteMatching(Long matchingId) {
+        matchingRepository.deleteById(matchingId);
+    }
 }

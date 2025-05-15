@@ -41,4 +41,10 @@ public class MatchingController {
         return ResponseEntity.status(HttpStatus.OK).body(matchingDetailResponseDTO);
     }
 
+    @DeleteMapping("/{matchingId}")
+    public ResponseEntity<?> deleteMatch(@PathVariable Long matchingId) {
+        matchingService.deleteMatching(matchingId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }
