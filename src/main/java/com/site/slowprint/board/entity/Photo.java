@@ -24,7 +24,7 @@ public class Photo {
     private Matching matching;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MATCHING_ID")
+    @JoinColumn(name = "RECRUITMENT_ID")
     private Recruitment recruitment;
 
     private boolean isMain;
