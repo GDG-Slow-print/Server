@@ -123,4 +123,8 @@ public class RecruitmentService {
         }
         return recruitmentDetailResponseDTO;
     }
+
+    public void deleteRecruitment(Long recruitmentId) {
+        recruitmentRepository.deleteById(recruitmentId);
+    }
 }
